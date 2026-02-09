@@ -84,51 +84,54 @@ The system returns a strict JSON output:
   "reasoning": ""
 }
 
-## Project Structure
-
+Project Structure
 claims-agent/
 ├── app/
-│ ├── main.py
-│ ├── document_reader.py
-│ ├── field_extractor.py
-│ ├── validator.py
-│ ├── router.py
-│ └── utils.py
+│   ├── main.py
+│   ├── document_reader.py
+│   ├── field_extractor.py
+│   ├── validator.py
+│   ├── router.py
+│   └── utils.py
 │
 ├── sample_inputs/
-│ └── sample_fnol.txt
+│   └── sample_fnol.txt
 │
 ├── output/
-│ └── sample_output.json
+│   └── sample_output.json
 │
 ├── requirements.txt
 └── README.md
 
 
----
 
-## Technologies Used
+Technologies Used
 
-- Python 3
-- pdfplumber
-- Regular Expressions
-- Standard Python libraries
+Python 3
 
----
+pdfplumber
 
-## Installation
+Regular Expressions
+
+Standard Python Libraries
+
+Installation
 
 Clone the repository and install the required dependencies:
 
-```bash
 pip install -r requirements.txt
+
 How to Run
+
 Run the application from the project root directory:
 
 python app/main.py sample_inputs/sample_fnol.txt
+
+
 For PDF input:
 
 python app/main.py sample_inputs/sample_fnol.pdf
+
 Example Output
 {
   "extractedFields": {
@@ -153,7 +156,9 @@ Example Output
   "recommendedRoute": "Fast-track",
   "reasoning": "Estimated damage is below 25,000"
 }
+
 Validation & Error Handling
+
 Unsupported file formats are rejected
 
 Mandatory fields are validated
@@ -163,6 +168,7 @@ Output directory is auto-created if missing
 Defensive checks prevent runtime errors
 
 Submission Notes
+
 This repository satisfies all requirements of the Autonomous Insurance Claims Processing Agent assessment:
 
 End-to-end working solution
@@ -173,10 +179,7 @@ Strict JSON output compliance
 
 Clean and readable code structure
 
-
-
-Clean and readable code structure
-
 Author
+
 Shankar Singh
 
