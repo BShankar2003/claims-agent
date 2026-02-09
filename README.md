@@ -15,15 +15,14 @@ The agent:
 
 ## Problem Statement
 
-Insurance FNOL documents often arrive in unstructured formats and require manual review.  
-This system automates the initial claims intake process, reducing manual effort and improving routing accuracy.
+Insurance FNOL documents often arrive in unstructured formats and require manual review. This system automates the initial claims intake process, reducing manual effort and improving routing accuracy.
 
 ---
 
 ## Supported Input Formats
 
-- TXT
-- PDF
+- **TXT**
+- **PDF**
 
 FNOL documents may include policy information, incident details, involved parties, and asset damage information.
 
@@ -32,30 +31,30 @@ FNOL documents may include policy information, incident details, involved partie
 ## Fields Extracted
 
 ### Policy Information
-- Policy Number  
-- Policyholder Name  
-- Policy Effective Dates  
+- Policy Number
+- Policyholder Name
+- Policy Effective Dates
 
 ### Incident Information
-- Incident Date  
-- Incident Time  
-- Incident Location  
-- Incident Description  
+- Incident Date
+- Incident Time
+- Incident Location
+- Incident Description
 
 ### Involved Parties
-- Claimant  
-- Third Parties  
-- Contact Details  
+- Claimant
+- Third Parties
+- Contact Details
 
 ### Asset Details
-- Asset Type  
-- Asset ID (VIN / Vehicle Number)  
-- Estimated Damage Amount  
+- Asset Type
+- Asset ID (VIN / Vehicle Number)
+- Estimated Damage Amount
 
 ### Mandatory Fields
-- Claim Type  
-- Attachments  
-- Initial Estimate  
+- Claim Type
+- Attachments
+- Initial Estimate
 
 ---
 
@@ -64,11 +63,11 @@ FNOL documents may include policy information, incident details, involved partie
 The claim is routed based on the following rules:
 
 | Condition | Route |
-|---------|-------|
-Estimated damage < 25,000 | Fast-track |
-Any mandatory field missing | Manual review |
-Description contains “fraud”, “inconsistent”, or “staged” | Investigation Flag |
-Claim type = injury | Specialist Queue |
+|-----------|-------|
+| Estimated damage < ₹25,000 | Fast-track |
+| Any mandatory field missing | Manual review |
+| Description contains "fraud", "inconsistent", or "staged" | Investigation Flag |
+| Claim type = injury | Specialist Queue |
 
 ---
 
@@ -83,8 +82,13 @@ The system returns a strict JSON output:
   "recommendedRoute": "",
   "reasoning": ""
 }
+```
 
-Project Structure
+---
+
+## Project Structure
+
+```
 claims-agent/
 ├── app/
 │   ├── main.py
@@ -102,37 +106,50 @@ claims-agent/
 │
 ├── requirements.txt
 └── README.md
+```
 
+---
 
+## Technologies Used
 
-Technologies Used
+- **Python 3**
+- **pdfplumber** (for PDF parsing)
+- **Regular Expressions** (for field extraction)
+- **Standard Python Libraries**
 
-Python 3
+---
 
-pdfplumber
-
-Regular Expressions
-
-Standard Python Libraries
-
-Installation
+## Installation
 
 Clone the repository and install the required dependencies:
 
+```bash
+git clone https://github.com/BShankar2003/claims-agent.git
+cd claims-agent
 pip install -r requirements.txt
+```
 
-How to Run
+---
+
+## How to Run
 
 Run the application from the project root directory:
 
+```bash
 python app/main.py sample_inputs/sample_fnol.txt
-
+```
 
 For PDF input:
 
+```bash
 python app/main.py sample_inputs/sample_fnol.pdf
+```
 
-Example Output
+---
+
+## Example Output
+
+```json
 {
   "extractedFields": {
     "policyNumber": "POL123456",
@@ -154,32 +171,38 @@ Example Output
   },
   "missingFields": [],
   "recommendedRoute": "Fast-track",
-  "reasoning": "Estimated damage is below 25,000"
+  "reasoning": "Estimated damage is below ₹25,000"
 }
+```
 
-Validation & Error Handling
+---
 
-Unsupported file formats are rejected
+## Validation & Error Handling
 
-Mandatory fields are validated
+- Unsupported file formats are rejected
+- Mandatory fields are validated
+- Output directory is auto-created if missing
+- Defensive checks prevent runtime errors
 
-Output directory is auto-created if missing
+---
 
-Defensive checks prevent runtime errors
+## Features
 
-Submission Notes
+✅ End-to-end working solution  
+✅ Deterministic routing logic  
+✅ Strict JSON output compliance  
+✅ Clean and readable code structure  
+✅ Supports both TXT and PDF formats  
+✅ Automated field extraction and validation  
 
-This repository satisfies all requirements of the Autonomous Insurance Claims Processing Agent assessment:
+---
 
-End-to-end working solution
+## Author
 
-Deterministic routing logic
+**B. Shankar Singh**
 
-Strict JSON output compliance
+---
 
-Clean and readable code structure
+## License
 
-Author
-
-Shankar Singh
-
+This project is open source and available under the [MIT License](LICENSE).
