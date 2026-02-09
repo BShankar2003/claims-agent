@@ -1,0 +1,20 @@
+Policy Number: POL123456
+Policyholder Name: Rahul Sharma
+Policy Effective Dates: 01-01-2024 to 31-12-2024
+
+Incident Date: 15-01-2024
+Incident Time: 14:30
+Incident Location: Bangalore
+Incident Description: Rear-end collision, minor damage
+
+Claimant: Rahul Sharma
+Third Parties: None
+Contact Details: 9876543210
+
+Asset Type: Car
+Vehicle Number: KA01AB1234
+Estimated Damage Amount: 18000
+
+Claim Type: vehicle
+Attachments: photos, FIR
+Initial Estimate: 18000

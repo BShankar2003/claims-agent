@@ -1,0 +1,23 @@
+{
+  "extractedFields": {
+    "policyNumber": "POL123456",
+    "policyholderName": "Rahul Sharma",
+    "policyEffectiveDates": "01-01-2024 to 31-12-2024",
+    "incidentDate": "15-01-2024",
+    "incidentTime": "14:30",
+    "incidentLocation": "Bangalore",
+    "incidentDescription": "Rear-end collision, minor damage",
+    "claimant": "Rahul Sharma",
+    "thirdParties": "None",
+    "contactDetails": "9876543210",
+    "assetType": "Car",
+    "assetId": "KA01AB1234",
+    "estimatedDamageAmount": "18000",
+    "claimType": "vehicle",
+    "attachments": "photos, FIR",
+    "initialEstimate": "18000"
+  },
+  "missingFields": [],
+  "recommendedRoute": "Fast-track",
+  "reasoning": "Estimated damage is below 25,000"
+}
