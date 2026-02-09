@@ -83,45 +83,53 @@ The system returns a strict JSON output:
   "recommendedRoute": "",
   "reasoning": ""
 }
+
 ## Project Structure
+
 claims-agent/
 ├── app/
-│   ├── main.py
-│   ├── document_reader.py
-│   ├── field_extractor.py
-│   ├── validator.py
-│   ├── router.py
-│   └── utils.py
+│ ├── main.py
+│ ├── document_reader.py
+│ ├── field_extractor.py
+│ ├── validator.py
+│ ├── router.py
+│ └── utils.py
 │
 ├── sample_inputs/
-│   └── sample_fnol.txt
+│ └── sample_fnol.txt
 │
 ├── output/
-│   └── sample_output.json
+│ └── sample_output.json
 │
 ├── requirements.txt
 └── README.md
-    ## Technologies Used##
-Python 3
 
-pdfplumber
 
-Regular Expressions
+---
 
-Standard Python libraries
+## Technologies Used
+
+- Python 3
+- pdfplumber
+- Regular Expressions
+- Standard Python libraries
+
+---
 
 ## Installation
-Clone the repository and install dependencies:
 
+Clone the repository and install the required dependencies:
+
+```bash
 pip install -r requirements.txt
-## How to Run
-Run the application from the project root:
+How to Run
+Run the application from the project root directory:
 
 python app/main.py sample_inputs/sample_fnol.txt
 For PDF input:
 
 python app/main.py sample_inputs/sample_fnol.pdf
-## Example Output
+Example Output
 {
   "extractedFields": {
     "policyNumber": "POL123456",
@@ -145,7 +153,7 @@ python app/main.py sample_inputs/sample_fnol.pdf
   "recommendedRoute": "Fast-track",
   "reasoning": "Estimated damage is below 25,000"
 }
-## Validation & Error Handling
+Validation & Error Handling
 Unsupported file formats are rejected
 
 Mandatory fields are validated
@@ -162,6 +170,10 @@ End-to-end working solution
 Deterministic routing logic
 
 Strict JSON output compliance
+
+Clean and readable code structure
+
+
 
 Clean and readable code structure
 
